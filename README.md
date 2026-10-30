@@ -1,22 +1,24 @@
-# Idle Railway Empire — Prototype v0.1
+# Idle Railway Empire (Ind_Railway) — Prototype v0.2
 
-A small Godot 4.7.2-compatible prototype scaffold for the railway network-building game.
+A Godot 4.7.2 railway network-building simulation prototype scaffold.
 
-## What works in this prototype scaffold
+## What works in this prototype
 
 - A large colourful, Indian-inspired 2D map drawn with placeholder shapes.
 - Two available station locations: Asha Nagar and Nadi Gaon.
-- Camera pan and zoom.
-- Build Mode: add track waypoints, preview a smoothed route, and connect the two stations.
-- Construction cost is deducted from starting coins.
-- A simple train moves back and forth along the built route.
+- Decoupled Camera2D with cursor-anchored zoom, map boundary clamping, and smooth damping.
+- Decoupled HUD scene (`scenes/hud.tscn`) with responsive controls and status messages.
+- Centralized game configuration (`scripts/game_config.gd`).
+- Build Mode: click to add track waypoints with real-time Catmull-Rom spline preview matching the final route.
+- Construction cost deducted from starting coins.
+- Bidirectional train movement along the built route with proper travel heading orientation.
 - Minimal HUD with status messages and build/cancel/reset controls.
 
 ## Controls (desktop prototype)
 
 - Drag with the left mouse button to pan the map.
-- Mouse wheel to zoom in/out.
-- Click **Build Track**, then click the map to place intermediate bends.
+- Mouse wheel to zoom in/out (anchored to cursor position).
+- Click **+ Build Track**, then click the map to place intermediate bends.
 - Click **Finish Route** to connect to Nadi Gaon and construct the route.
 - Click **Cancel** to leave build mode.
 - Click **Reset View** to return the camera to its starting position.
@@ -24,11 +26,10 @@ A small Godot 4.7.2-compatible prototype scaffold for the railway network-buildi
 ## Open the project
 
 1. Install the **standard** (not .NET) build of Godot 4.7.2 stable.
-2. Extract this ZIP into a normal project folder (for example `Documents/IdleRailwayEmpire_Prototype`).
-3. Open Godot Project Manager and select **Import**.
-4. Choose the extracted folder, select `project.godot`, and import it.
-5. Open the project and press **F6** to run the current scene or **F5** to run the main project.
-6. Open the project folder in Antigravity as a workspace when you want the AI assistant to help edit the GDScript files.
+2. Open Godot Project Manager and select **Import**.
+3. Choose the project folder, select `project.godot`, and import it.
+4. Open the project and press **F6** to run the current scene or **F5** to run the main project.
+5. Open the project folder in Antigravity as a workspace when you want the AI assistant to help edit the GDScript files.
 
 ## Important
 
