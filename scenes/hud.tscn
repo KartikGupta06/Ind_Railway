@@ -1,0 +1,113 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/hud_controller.gd" id="1_hud"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hud")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TopPanel" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 14.0
+offset_top = 12.0
+offset_right = -14.0
+offset_bottom = 70.0
+grow_horizontal = 2
+
+[node name="TopRow" type="HBoxContainer" parent="Root/TopPanel"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="TitleLabel" type="Label" parent="Root/TopPanel/TopRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "IDLE RAILWAY EMPIRE - PROTOTYPE"
+
+[node name="Spacer" type="Control" parent="Root/TopPanel/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CoinsLabel" type="Label" parent="Root/TopPanel/TopRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "5,000 coins"
+
+[node name="TimeLabel" type="Label" parent="Root/TopPanel/TopRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "08:15 AM - DAY 1"
+
+[node name="StatusPanel" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchor_right = 0.58
+offset_left = 14.0
+offset_top = 82.0
+offset_right = -8.0
+offset_bottom = 130.0
+
+[node name="StatusLabel" type="Label" parent="Root/StatusPanel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Welcome! Connect Asha Nagar and Nadi Gaon by building your first railway track."
+autowrap_mode = 3
+
+[node name="BottomPanel" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -88.0
+offset_right = -14.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BottomRow" type="HBoxContainer" parent="Root/BottomPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BuildButton" type="Button" parent="Root/BottomPanel/BottomRow"]
+custom_minimum_size = Vector2(170, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "+ Build Track"
+
+[node name="FinishButton" type="Button" parent="Root/BottomPanel/BottomRow"]
+custom_minimum_size = Vector2(170, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+disabled = true
+text = "Finish Route"
+
+[node name="CancelButton" type="Button" parent="Root/BottomPanel/BottomRow"]
+custom_minimum_size = Vector2(130, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+disabled = true
+text = "Cancel"
+
+[node name="ResetButton" type="Button" parent="Root/BottomPanel/BottomRow"]
+custom_minimum_size = Vector2(150, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Reset View"
+
+[node name="HelpLabel" type="Label" parent="Root/BottomPanel/BottomRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 14
+text = "Drag to pan | Mouse wheel to zoom | In Build Mode, click map to add bends"
+horizontal_alignment = 2
+vertical_alignment = 1
