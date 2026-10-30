@@ -30,8 +30,8 @@ theme_override_constants/separation = 18
 
 [node name="TitleLabel" type="Label" parent="Root/TopPanel/TopRow"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 21
-text = "IDLE RAILWAY EMPIRE - PROTOTYPE"
+theme_override_font_sizes/font_size = 20
+text = "IDLE RAILWAY EMPIRE"
 
 [node name="Spacer" type="Control" parent="Root/TopPanel/TopRow"]
 layout_mode = 2
@@ -44,22 +44,44 @@ text = "5,000 coins"
 
 [node name="TimeLabel" type="Label" parent="Root/TopPanel/TopRow"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 17
 text = "08:15 AM - DAY 1"
 
 [node name="StatusPanel" type="PanelContainer" parent="Root"]
 layout_mode = 1
 anchor_right = 0.58
 offset_left = 14.0
-offset_top = 82.0
+offset_top = 80.0
 offset_right = -8.0
-offset_bottom = 130.0
+offset_bottom = 126.0
 
 [node name="StatusLabel" type="Label" parent="Root/StatusPanel"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 15
-text = "Welcome! Connect Asha Nagar and Nadi Gaon by building your first railway track."
+theme_override_font_sizes/font_size = 14
+text = "Welcome to Sahyadri Valley! Connect Asha Nagar and Nadi Gaon to run your first passenger train."
 autowrap_mode = 3
+
+[node name="BuildInfoPanel" type="PanelContainer" parent="Root"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -260.0
+offset_top = -142.0
+offset_right = 260.0
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BuildInfoLabel" type="Label" parent="Root/BuildInfoPanel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "TRACK PLANNING | 0/9 Bends | Cost: 0 coins"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BottomPanel" type="PanelContainer" parent="Root"]
 layout_mode = 1
@@ -76,7 +98,7 @@ grow_vertical = 0
 
 [node name="BottomRow" type="HBoxContainer" parent="Root/BottomPanel"]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 12
 
 [node name="BuildButton" type="Button" parent="Root/BottomPanel/BottomRow"]
 custom_minimum_size = Vector2(170, 48)

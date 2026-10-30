@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="Script" path="res://scripts/camera_controller.gd" id="2_camera"]
-[ext_resource type="PackedScene" path="res://scenes/hud.tscn" id="3_hud"]
+[ext_resource type="Script" path="res://scripts/world_renderer.gd" id="3_world"]
+[ext_resource type="Script" path="res://scripts/track_renderer.gd" id="4_track"]
+[ext_resource type="Script" path="res://scripts/station_renderer.gd" id="5_station"]
+[ext_resource type="Script" path="res://scripts/train_renderer.gd" id="6_train"]
+[ext_resource type="PackedScene" path="res://scenes/hud.tscn" id="7_hud"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_main")
@@ -10,4 +14,16 @@ script = ExtResource("1_main")
 [node name="WorldCamera" type="Camera2D" parent="."]
 script = ExtResource("2_camera")
 
-[node name="HUD" parent="." instance=ExtResource("3_hud")]
+[node name="WorldRenderer" type="Node2D" parent="."]
+script = ExtResource("3_world")
+
+[node name="TrackRenderer" type="Node2D" parent="."]
+script = ExtResource("4_track")
+
+[node name="StationRenderer" type="Node2D" parent="."]
+script = ExtResource("5_station")
+
+[node name="TrainRenderer" type="Node2D" parent="."]
+script = ExtResource("6_train")
+
+[node name="HUD" parent="." instance=ExtResource("7_hud")]
